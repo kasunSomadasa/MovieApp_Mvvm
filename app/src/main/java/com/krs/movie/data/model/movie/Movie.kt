@@ -1,6 +1,7 @@
-package com.krs.movie.model.movie
+package com.krs.movie.data.model.movie
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Movie(
     @SerializedName("id")
@@ -13,4 +14,4 @@ data class Movie(
     val releaseDate: String?,
     @SerializedName("title")
     val title: String?,
-)
+): Serializable

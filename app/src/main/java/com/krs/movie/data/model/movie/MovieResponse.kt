@@ -1,4 +1,4 @@
-package com.krs.movie.model.movie
+package com.krs.movie.data.model.movie
 
 
 import com.google.gson.annotations.SerializedName

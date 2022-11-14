@@ -1,7 +1,8 @@
-package com.krs.movie.model.tvshow
+package com.krs.movie.data.model.tvshow
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class TvShow(
     @SerializedName("id")
@@ -12,4 +13,4 @@ data class TvShow(
     val overview: String?,
     @SerializedName("poster_path")
     val posterPath: String?,
-)
+): Serializable

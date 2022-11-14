@@ -1,8 +1,8 @@
-package com.krs.movie.data
+package com.krs.movie.data.network
 
 import com.krs.movie.BuildConfig
-import com.krs.movie.model.movie.MovieResponse
-import com.krs.movie.model.tvshow.TvShowResponse
+import com.krs.movie.data.model.movie.MovieResponse
+import com.krs.movie.data.model.tvshow.TvShowResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
