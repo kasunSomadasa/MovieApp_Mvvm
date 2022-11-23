@@ -6,6 +6,7 @@ import com.google.common.truth.Truth
 import com.krs.movie.data.model.movie.Movie
 import com.krs.movie.repository.FakeMovieRepository
 import com.krs.movie.utils.Resource
+import com.krs.newsapp.data.getOrAwaitValue
 import org.junit.After
 import org.junit.Before
 
@@ -42,7 +43,7 @@ class MovieViewModelTest {
         movieList.add(Movie(2, "overview2", "/path/2", "2022/12/12", "title2"))
 
         movieViewModel.getPopularMovies()
-        var response = movieViewModel.movieLiveData.value
+        var response = movieViewModel.movieLiveData.getOrAwaitValue()
         when(response) {
             is Resource.Success -> {
                 response.data?.let {

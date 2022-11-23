@@ -84,4 +84,48 @@ class MovieApiServiceTest {
             Truth.assertThat(movie.posterPath).isEqualTo("/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg")
         }
     }
+
+    /**
+     * checking if the service function send the request to the server properly
+     */
+    @Test
+    fun getPopularTVShows_requestSent_receivedExpected(){
+        runBlocking {
+            enqueueMockResponse("tv_response.json")
+            val responseBody = movieApiService.getPopularTVShows().body()
+            val request = server.takeRequest()
+            Truth.assertThat(responseBody).isNotNull()
+            Truth.assertThat(request.path).isEqualTo("/tv/popular?api_key=79b2d5fa68edd9eafd05646a1a2dc30d")
+        }
+    }
+
+    /**
+     * checking if our service function receives the response properly
+     */
+    @Test
+    fun getPopularTVShows_receivedResponse_correctPageItemSize(){
+        runBlocking {
+            enqueueMockResponse("tv_response.json")
+            val responseBody = movieApiService.getPopularTVShows().body()
+            val tvShowList = responseBody!!.tvShows
+            Truth.assertThat(tvShowList.size).isEqualTo(20)
+        }
+    }
+
+
+    /**
+     * checking the content of the received objects
+     */
+    @Test
+    fun getPopularTVShows_receivedResponse_correctContent(){
+        runBlocking {
+            enqueueMockResponse("tv_response.json")
+            val responseBody = movieApiService.getPopularTVShows().body()
+            val tvShowList = responseBody!!.tvShows
+            val tvShow = tvShowList[0]
+            Truth.assertThat(tvShow.name).isEqualTo("The Walking Dead")
+            Truth.assertThat(tvShow.firstAirDate).isEqualTo("2010-10-31")
+            Truth.assertThat(tvShow.posterPath).isEqualTo("/xf9wuDcqlUPWABZNeDKPbZUjWx0.jpg")
+        }
+    }
 }
