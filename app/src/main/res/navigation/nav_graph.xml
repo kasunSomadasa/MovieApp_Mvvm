@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/movieFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.krs.movie.ui.movie.MovieFragment"
+        android:label="Latest Movie" >
+        <action
+            android:id="@+id/action_movieFragment_to_movieInfoFragment"
+            app:destination="@id/movieInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowFragment"
+        android:name="com.krs.movie.ui.tvshow.TvShowFragment"
+        android:label="Latest TV Show"
+        tools:layout="@layout/fragment_tv_show" >
+        <action
+            android:id="@+id/action_tvShowFragment_to_tvShowInfoFragment"
+            app:destination="@id/tvShowInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieInfoFragment"
+        android:name="com.krs.movie.ui.movie.MovieInfoFragment"
+        android:label="Movie Details"
+        tools:layout="@layout/fragment_movie_info" >
+        <argument android:name="movie"
+            app:argType="com.krs.movie.data.model.movie.Movie"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowInfoFragment"
+        android:name="com.krs.movie.ui.tvshow.TvShowInfoFragment"
+        android:label="TV Show Details"
+        tools:layout="@layout/fragment_tv_show_info" >
+        <argument
+            android:name="tvShow"
+            app:argType="com.krs.movie.data.model.tvshow.TvShow"
+            app:nullable="true" />
+    </fragment>
+</navigation>
