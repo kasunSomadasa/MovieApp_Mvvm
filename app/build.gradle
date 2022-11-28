@@ -60,7 +60,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation "com.makeramen:roundedimageview:$roundedimageview_version"
+    implementation "com.makeramen:roundedimageview:$rounded_image_version"
 
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
