@@ -13,20 +13,20 @@ class TvShowViewModel constructor(
 ) : ViewModel() {
 
     // live data for tv show list
-    private val tvShowMutableLiveData: MutableLiveData<Resource<TvShowResponse>> = MutableLiveData()
+    private val _tvShowMutableLiveData: MutableLiveData<Resource<TvShowResponse>> = MutableLiveData()
     val tvShowLiveData: LiveData<Resource<TvShowResponse>>
-        get() = tvShowMutableLiveData
+        get() = _tvShowMutableLiveData
 
     // request popular tv show list from api and post it to the live data
     fun getPopularTvShow() = viewModelScope.launch(Dispatchers.IO) {
-        tvShowMutableLiveData.postValue(Resource.Loading())
+        _tvShowMutableLiveData.postValue(Resource.Loading())
         try {
             val result = tvShowRepository.getPopularTVShows()
-            tvShowMutableLiveData.postValue(result)
+            _tvShowMutableLiveData.postValue(result)
         } catch (e: NoInternetException) {
-            tvShowMutableLiveData.postValue(Resource.Error(e.message.toString()))
+            _tvShowMutableLiveData.postValue(Resource.Error(e.message.toString()))
         } catch (e: Exception) {
-            tvShowMutableLiveData.postValue(Resource.Error(e.message.toString()))
+            _tvShowMutableLiveData.postValue(Resource.Error(e.message.toString()))
         }
     }
 

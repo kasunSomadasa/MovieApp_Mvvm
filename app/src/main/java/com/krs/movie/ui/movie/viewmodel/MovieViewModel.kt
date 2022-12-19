@@ -13,20 +13,20 @@ class MovieViewModel constructor(
 ) : ViewModel() {
 
     // live data for movie list
-    private val movieMutableLiveData: MutableLiveData<Resource<MovieResponse>> = MutableLiveData()
+    private val _movieMutableLiveData: MutableLiveData<Resource<MovieResponse>> = MutableLiveData()
     val movieLiveData: LiveData<Resource<MovieResponse>>
-        get() = movieMutableLiveData
+        get() = _movieMutableLiveData
 
     // request popular movie list from api and post it to the live data
     fun getPopularMovies() = viewModelScope.launch(Dispatchers.IO) {
-        movieMutableLiveData.postValue(Resource.Loading())
+        _movieMutableLiveData.postValue(Resource.Loading())
         try {
             val result = movieRepository.getPopularMovies()
-            movieMutableLiveData.postValue(result)
+            _movieMutableLiveData.postValue(result)
         } catch (e: NoInternetException) {
-            movieMutableLiveData.postValue(Resource.Error(e.message.toString()))
+            _movieMutableLiveData.postValue(Resource.Error(e.message.toString()))
         } catch (e: Exception) {
-            movieMutableLiveData.postValue(Resource.Error(e.message.toString()))
+            _movieMutableLiveData.postValue(Resource.Error(e.message.toString()))
         }
     }
 
