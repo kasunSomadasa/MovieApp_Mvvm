@@ -1,7 +1,13 @@
 # The Movie App - Mvvm Architecture
 
 The Movie App - App consuming a [TMDB API](https://developers.themoviedb.org/3) to display movie details. The app has been built with mvvm architecture principles usign kotlin language.
-This app shows the usage of the kotlin coroutines, jetpack navigation architecture and this codebase also includes unit testing.
+This app shows the usage of the kotlin coroutines, jetpack navigation architecture component in collaboration with the bottom navigation view and this codebase also includes unit testing.
+
+## App features:
+
+ - List of Latest Movies
+ - List of Latest Tv Shows
+ - Details of the Movies and Tv shows
 
 ## App packages:
 - data: It contains all the data accessing components.
