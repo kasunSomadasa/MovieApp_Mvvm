@@ -17,7 +17,7 @@ This app shows the usage of the kotlin coroutines, jetpack navigation architectu
 - utils: Utility classes.
 
 ## Screenshots:
-<p align="center"><kbd><img src="https://user-images.githubusercontent.com/32154905/215327933-5c1b57a1-de85-4c8b-835a-bfaabd177b8e.jpg" width="320"></kbd>&nbsp;&nbsp;&nbsp;&nbsp;<kbd><img src="https://user-images.githubusercontent.com/32154905/215327935-f7c23604-e961-46e6-8d81-2cc7ed43c76f.jpg" width="320"></kbd><p>
+<p align="center"><kbd><img src="https://user-images.githubusercontent.com/32154905/218305747-dd4388eb-2dad-4207-b2ac-5aead4ba6bec.jpg" width="320"></kbd>&nbsp;&nbsp;&nbsp;&nbsp;<kbd><img src="https://user-images.githubusercontent.com/32154905/218305769-1092546c-efa7-41a0-8a0e-66f7e7ff03d1.jpg" width="320"></kbd><p>
 
 ## Architecture:
 Model-View-ViewModel (ie MVVM) is a template of a client application architecture, proposed by John Gossman as an alternative to MVC and MVP patterns when using Data Binding technology. Its concept is to separate data presentation logic from business logic by moving it into particular class for a clear distinction.
