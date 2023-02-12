@@ -12,7 +12,7 @@ This app shows the usage of the kotlin coroutines, jetpack navigation architectu
 ## App packages:
 - data: It contains all the data accessing components.
 - repository: Provide business logic and data manipulating components.
-- di: Dependency providing classes using Dagger2.
+- di: Dependency providing classes using Dagger Hilt.
 - ui: View classes along with their corresponding ViewModel.
 - utils: Utility classes.
 
